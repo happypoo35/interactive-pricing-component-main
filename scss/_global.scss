@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: $Grayish-Blue-Text;
+  background: $Very-Pale-Blue-Main-Background;
+}
+
+h1,
+h2,
+h4,
+button {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  // font-size: 1.75rem;
+  color: $Dark-Desaturated-Blue-Text-and-CTA-Background;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  color: $Dark-Desaturated-Blue-Text-and-CTA-Background;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+p {
+  font-size: 0.9375rem;
+  font-size: clamp(0.8125rem, 3vw, 0.9375rem);
+  line-height: 1.7;
+  @include mobile {
+    width: 55%;
+  }
+}
+
+.period {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: $Grayish-Blue-Text;
+
+  @include mobile {
+    font-size: 0.875rem;
+  }
+}
+
+li {
+  font-size: 0.75rem;
+}
+
+ul {
+  list-style-type: none;
+
+  @include mobile {
+    margin-bottom: 2rem;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 0.75rem 2.875rem;
+  outline: none;
+  border: none;
+  border-radius: 3rem;
+  background: $Dark-Desaturated-Blue-Text-and-CTA-Background;
+  color: $Pale-Blue-CTA-Text;
+  @extend %transition;
+
+  &:hover {
+    background: lighten($Dark-Desaturated-Blue-Text-and-CTA-Background, 5%);
+    color: white;
+  }
+}

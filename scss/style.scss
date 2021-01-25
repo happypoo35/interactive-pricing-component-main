@@ -1,0 +1,204 @@
+@import "config";
+@import "global";
+@import "slider";
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 3rem 1.375rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: no-repeat bottom left url("../images/bg-pattern.svg");
+    background-size: cover;
+    z-index: -2;
+  }
+}
+
+.page-header {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5.625rem;
+
+  @include mobile {
+    margin-bottom: 4rem;
+  }
+
+  &::after {
+    content: url("../images/pattern-circles.svg");
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.price {
+  position: relative;
+  width: min(33.75rem, 100%);
+  background: white;
+  padding: 2.625rem 3rem 2.125rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba($Light-Grayish-Blue-Toggle-Background, 0.6);
+
+  @include mobile {
+    padding: 2.625rem 1.5rem 2.125rem;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.25rem;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        position: absolute;
+        top: 9rem;
+      }
+    }
+
+    span {
+      margin-left: 0.25rem;
+    }
+  }
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 4.5rem;
+
+  &:hover {
+    .checkbox {
+      background: $Soft-Cyan-Full-Slider-Bar;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ .checkbox {
+      &::after {
+        transform: translate(125%, -50%);
+      }
+    }
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
+
+  .yearly {
+    position: relative;
+
+    &::after {
+      content: "25% discount";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -125%;
+      background: rgba($Light-Red-Discount-Text, 0.15);
+      font-size: 0.625rem;
+      font-weight: 800;
+      color: $Light-Red-Discount-Text;
+      border-radius: 1rem;
+      padding: 0.25rem 0.375rem;
+
+      @include mobile {
+        content: "-25%";
+        right: -60%;
+      }
+    }
+  }
+
+  .checkbox {
+    position: relative;
+    width: 2.75rem;
+    height: 1.375rem;
+    border-radius: 2rem;
+    background: $Light-Grayish-Blue-Toggle-Background;
+    margin: 0 1rem;
+    @extend %transition;
+
+    @include mobile {
+      margin: 0 0.75rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0.25rem;
+      transform: translate(0, -50%);
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: white;
+      @extend %transition;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16.375rem;
+    height: 1px;
+    width: 100%;
+    background: $Light-Grayish-Blue-Empty-Slider-Bar;
+
+    @include mobile {
+      top: 18rem;
+    }
+  }
+
+  img {
+    margin-right: 1rem;
+  }
+
+  li {
+    @include mobile {
+      text-align: center;
+    }
+
+    &:nth-child(2) {
+      margin: 0.625rem 0;
+    }
+  }
+}

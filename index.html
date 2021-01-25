@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <section class="price" aria-label="Price Calculator">
+        <header class="price-header">
+          <h4 id="pageviews">100k Pageviews</h4>
+          <h2 id="price">
+            $16.00<span class="period" id="period">/ month</span>
+          </h2>
+        </header>
+        <input
+          type="range"
+          name="slider"
+          id="slider"
+          class="slider"
+          value="16"
+          min="1"
+          max="32"
+        />
+        <label class="toggle-container">
+          <input type="checkbox" name="toggle" id="toggle" />
+          <span class="monthly">Monthly Billing</span>
+          <div class="checkbox"></div>
+          <span class="yearly">Yearly Billing</span>
+        </label>
+        <footer>
+          <ul class="list">
+            <li>
+              <img src="./images/icon-check.svg" alt="checkmark" />Unlimited
+              websites
+            </li>
+            <li>
+              <img src="./images/icon-check.svg" alt="checkmark" />100% data
+              ownership
+            </li>
+            <li>
+              <img src="./images/icon-check.svg" alt="checkmark" />Email reports
+            </li>
+          </ul>
+          <button>Start my trial</button>
+        </footer>
+      </section>
+    </div>
+  </body>
+  <script src="js/App.js"></script>
+</html>
