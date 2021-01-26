@@ -13,7 +13,7 @@ const files = {
 
 const scssTask = () => {
   return src(files.scssPath)
-    .pipe(sass({outputStyle: 'expanded'}).on("error", sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(dest("./css"))
     .pipe(browserSync.stream());

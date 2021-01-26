@@ -3,20 +3,23 @@
 @import "slider";
 
 .container {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
-  padding: 3rem 1.375rem;
+  padding: 6.5rem 1.375rem 3rem;
+
+  @include mobile {
+    padding-top: 3rem;
+  }
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     width: 100%;
-    height: 50%;
+    height: 56%;
     background: no-repeat bottom left url("../images/bg-pattern.svg");
     background-size: cover;
     z-index: -2;
@@ -29,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5.625rem;
+  margin-bottom: 5.75rem;
 
   @include mobile {
     margin-bottom: 4rem;
@@ -44,7 +47,7 @@
   }
 
   h1 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -52,7 +55,7 @@
   position: relative;
   width: min(33.75rem, 100%);
   background: white;
-  padding: 2.625rem 3rem 2.125rem;
+  padding: 2.5rem 3rem 2.125rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1.5rem rgba($Light-Grayish-Blue-Toggle-Background, 0.6);
 
@@ -64,7 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
 
     @include mobile {
       flex-direction: column;

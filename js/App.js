@@ -8,7 +8,7 @@ const sliderFill = document.documentElement;
 slider.addEventListener("input", () => {
   price.innerHTML = `$${
     toggle.checked
-      ? Math.floor(slider.value * 7.5) + ".00"
+      ? Math.floor(((slider.value * 12) / 100) * 75) + ".00"
       : slider.value + ".00"
   }<span class="period" id="period">${
     toggle.checked ? "/ year" : "/ month"
@@ -25,7 +25,7 @@ slider.addEventListener("input", () => {
 toggle.addEventListener("click", () => {
   price.innerHTML = `$${
     toggle.checked
-      ? Math.floor(slider.value * 7.5) + ".00"
+      ? Math.floor(((slider.value * 12) / 100) * 75) + ".00"
       : slider.value + ".00"
   }<span class="period" id="period">${
     toggle.checked ? "/ year" : "/ month"
