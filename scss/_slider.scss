@@ -3,22 +3,10 @@
   width: 100%;
   background: transparent;
   outline: none;
-  position: relative;
   margin-bottom: 3.375rem;
 
   @include mobile {
     margin-bottom: 7rem;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: var(--fillwidth);
-    height: 0.5rem;
-    background: $Soft-Cyan-Full-Slider-Bar;
-    border-radius: 1rem;
-    pointer-events: none;
-    z-index: 0;
   }
 
   &:focus {
@@ -56,7 +44,11 @@
       width: 100%;
       height: 0.5rem;
       cursor: pointer;
-      background: $Light-Grayish-Blue-Empty-Slider-Bar;
+      background-image: linear-gradient(
+        to right,
+        $Soft-Cyan-Full-Slider-Bar var(--fillwidth),
+        $Light-Grayish-Blue-Empty-Slider-Bar var(--fillwidth)
+      );
       border-radius: 1rem;
     }
   }
@@ -88,7 +80,11 @@
       width: 100%;
       height: 0.5rem;
       cursor: pointer;
-      background: $Light-Grayish-Blue-Empty-Slider-Bar;
+      background-image: linear-gradient(
+        to right,
+        $Soft-Cyan-Full-Slider-Bar var(--fillwidth),
+        $Light-Grayish-Blue-Empty-Slider-Bar var(--fillwidth)
+      );
       border-radius: 1rem;
     }
   }
@@ -125,27 +121,3 @@
     }
   }
 }
-
-// .slider {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-
-//   &-btn {
-//     position: absolute;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     width: 2.625rem;
-//     height: 2.625rem;
-//     border-radius: 50%;
-//     background: $Strong-Cyan-Slider-Backround no-repeat center
-//       url("../images/icon-slider.svg");
-//   }
-
-//   &-bar {
-//     width: 100%;
-//     height: 0.5rem;
-//     background: $Light-Grayish-Blue-Empty-Slider-Bar;
-//     border-radius: 1rem;
-//   }
-// }
